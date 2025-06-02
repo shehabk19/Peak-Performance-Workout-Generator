@@ -1,0 +1,18 @@
+body {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .card {
+    background-color: #ffffff10;
+    border: 1px solid #ffffff30;
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+  }
+  
+  pre {
+    white-space: pre-wrap;
+    color: #ffffff;
+  }
+  
