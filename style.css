@@ -1,18 +1,29 @@
 body {
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-    color: #fff;
-    font-family: 'Segoe UI', sans-serif;
-  }
-  
-  .card {
-    background-color: #ffffff10;
-    border: 1px solid #ffffff30;
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
-  }
-  
-  pre {
-    white-space: pre-wrap;
-    color: #ffffff;
-  }
-  
+  background: #0a0f2c;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  padding-bottom: 50px;
+}
+
+h1 {
+  color: white;
+  font-weight: 600;
+}
+
+.logo-img {
+  width: 100px;
+  height: auto;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+pre {
+  white-space: pre-wrap;
+  color: #ffffff;
+}

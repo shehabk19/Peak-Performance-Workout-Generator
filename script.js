@@ -14,56 +14,63 @@ form.addEventListener('submit', function(e) {
 });
 
 function generateWorkout(sport, goal, level) {
-  // Fake AI logic using prompt-like patterns
-  const database = {
+  const workouts = {
     basketball: {
       endurance: {
-        beginner: [
-          "10 min jogging warm-up",
-          "3x 200m shuttle runs",
-          "Layup drills (5 mins)",
-          "Core circuit: 3 rounds"
-        ],
-        intermediate: [
-          "15 min warm-up with ball handling",
-          "5x 300m sprints",
-          "Suicide drills (5 sets)",
-          "Plank hold + jump rope combo"
-        ],
-        advanced: [
-          "20 min full-court drills",
-          "10x 200m sprints",
-          "Cone dribble and drive (15 min)",
-          "Agility ladder + core blast"
-        ]
+        beginner: ["Jog 10 mins", "Suicides x3", "Core circuit (2 rounds)", "Layup drills"],
+        intermediate: ["15 min warm-up", "Shuttle runs", "Full-court sprints", "3 round HIIT"],
+        advanced: ["Explosive jumps", "200m sprints x5", "Cone agility drills", "Core burnout"]
       },
       strength: {
-        beginner: [
-          "Bodyweight squats (3x15)",
-          "Push-ups (3x10)",
-          "Medicine ball passes",
-          "Wall sits (3x30 sec)"
-        ],
-        intermediate: [
-          "Weighted lunges (3x12)",
-          "Pull-ups or resistance bands",
-          "Overhead press with dumbbells",
-          "Core burnout: 4 rounds"
-        ],
-        advanced: [
-          "Squat + Press (3x10)",
-          "Deadlifts (4x8)",
-          "Explosive push-ups",
-          "Medicine ball slams"
-        ]
+        beginner: ["Wall sits", "Push-ups", "Bodyweight squats", "Plank 30s x3"],
+        intermediate: ["Deadlifts", "Medicine ball slams", "Pull-ups", "Russian twists"],
+        advanced: ["Barbell squats", "Weighted push-ups", "Overhead press", "Core & grip training"]
+      },
+      speed: {
+        beginner: ["Sprints x4", "Fast footwork drills", "Jump rope", "Short layup runs"],
+        intermediate: ["Resistance band sprints", "Agility ladder", "30m sprint x6", "Bounding jumps"],
+        advanced: ["Sprint intervals", "Plyometrics", "Quick cone drills", "Explosive pushups"]
       }
     },
-    // You can add "soccer" and "track" similar to basketball
+    soccer: {
+      endurance: {
+        beginner: ["Light jog 15 min", "Passing drills", "Shuttle runs", "Core 2 rounds"],
+        intermediate: ["30 min run", "4x400m intervals", "Wall passes", "Agility work"],
+        advanced: ["5k tempo run", "Sprint intervals", "Triangle drills", "Plyometric circuit"]
+      },
+      strength: {
+        beginner: ["Bodyweight lunges", "Push-ups", "Calf raises", "Sit-ups"],
+        intermediate: ["Dumbbell squats", "Core circuit", "Glute bridges", "Planks"],
+        advanced: ["Power cleans", "Barbell squats", "Deadlifts", "Weighted planks"]
+      },
+      speed: {
+        beginner: ["Cone drills", "Short sprints", "Jump rope", "Footwork"],
+        intermediate: ["Sprint ladders", "Explosive starts", "Bounding drills", "Hurdles"],
+        advanced: ["40m sprints", "Sled pushes", "High knee jumps", "Resisted runs"]
+      }
+    },
+    football: {
+      endurance: {
+        beginner: ["Light jog 10 mins", "Jump rope 3 mins", "Tire flips", "Burpees x10"],
+        intermediate: ["Interval running", "Ladder drills", "Agility cones", "Stair sprints"],
+        advanced: ["Hill sprints", "5x400m runs", "Plyo push-ups", "4-round HIIT"]
+      },
+      strength: {
+        beginner: ["Bodyweight squats", "Push-ups", "Medicine ball slams", "Wall sits"],
+        intermediate: ["Deadlifts", "Power cleans", "Push press", "Plank rows"],
+        advanced: ["Heavy squats", "Bench press", "Snatch", "Explosive rows"]
+      },
+      speed: {
+        beginner: ["10m sprints", "Jump squats", "Footwork ladder", "Side shuffles"],
+        intermediate: ["Resistance runs", "Sprint drills", "Sled pulls", "Bounding"],
+        advanced: ["Track sprints", "Overspeed training", "Reaction drills", "Hurdle hops"]
+      }
+    }
   };
 
-  const list = database[sport]?.[goal]?.[level];
+  const plan = workouts[sport]?.[goal]?.[level];
 
-  if (!list) return "Sorry, no workout found for your selection.";
+  if (!plan) return "⚠️ No workout found. Please try different options.";
 
-  return list.map((item, i) => `${i + 1}. ${item}`).join("\n");
+  return plan.map((step, i) => `${i + 1}. ${step}`).join("\n");
 }
